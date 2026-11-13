@@ -1,110 +1,90 @@
-# React + Vite
+# Fish Identifier AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fish identification application developed as part of a collaborative R&D project at the Nimbus Research Centre, Munster Technological University (MTU)
 
-Currently, two official plugins are available:
+The application allows users to photograph fish, receive AI-generated species predictions, record catches and view their catch history through an image gallery, statistics dashboard and interactive map. It also supports offline image storage and later synchronisation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **AI Fish Identification:** Capture or select photographs for AI-based fish identification.
+- **Result Confirmation:** Review AI predictions, confirm species, manually correct results or mark unidentified catches.
+- **Offline Support:** Save photographs and catch information locally when an internet connection is unavailable.
+- **Catch Synchronisation:** Upload previously saved catches when connectivity is restored.
+- **Image Gallery:** Browse, edit and manage recorded catches.
+- **Catch History:** View previous catches, including species, photographs, dates and location information.
+- **Interactive Map:** Display catch locations using GPS coordinates.
+- **Statistics Dashboard:** View personal catch statistics, with additional global statistics for administrator accounts.
+- **User Accounts:** Register, log in and access user-specific catch records.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Technologies Used
 
-## Expanding the ESLint configuration
+Frontend: React, JavaScript, HTML, CSS                    
+Mobile: Capacitor, Android                              
+Cloud Services: AWS S3, DynamoDB, API Gateway, Lambda 
+AI Research: Amazon Rekognition, Amazon Bedrock, Fishial     
+Mapping: Leaflet, OpenStreetMap                          
+Image Handling: Capacitor Camera, ExifReader                    
+Local Storage: Capacitor Preferences, Filesystem               
+Networking: Axios, Capacitor Network                        
+Other Libraries: React Router, bcryptjs                          
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## AI Research
 
-# BlueShuttle
+As part of the project, different approaches to fish and shark identification were researched and evaluated.
 
+This included investigating:
 
+- **Amazon Rekognition:** Image label detection and confidence scores.
+- **Amazon Bedrock:** Claude 3 Haiku image analysis for identifying shark species.
+- **Fishial:** Specialist fish identification capabilities.
 
-## Getting started
+The research included setting up test cases and evaluation criteria to compare the different approaches and assess their suitability for the application's requirements.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+The `research/test.js` script contains experimental comparisons between Amazon Rekognition and Amazon Bedrock using a collection of sample shark images. This research was conducted separately from the application's main identification workflow.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Application Architecture
 
-## Add your files
+The application uses React for its frontend and Capacitor to provide Android functionality.
 
-* [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+Photographs are uploaded to Amazon S3 and processed through an API Gateway endpoint connected to backend services. Catch records and user information are stored in DynamoDB.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/NimbusDev/blueshuttle.git
-git branch -M main
-git push -uf origin main
-```
+The application also uses image metadata and device GPS coordinates to associate catches with locations, while Capacitor Preferences and Filesystem support local storage and offline catch management.
 
-## Integrate with your tools
+## My Contribution
 
-* [Set up project integrations](https://gitlab.com/NimbusDev/blueshuttle/-/settings/integrations)
+During my time spent on this project, I worked across both frontend and backend components, alongside research, cloud integration and software testing.
 
-## Collaborate with your team
+**Frontend and Backend Development**
 
-* [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- Contributed to the development of the React application using JavaScript, JSX and CSS.
+- Worked across frontend functionality and backend service integrations.
+- Implemented and worked with application features involving image uploads, user accounts, catch records and data retrieval.
+- Worked with Capacitor to support Android functionality and native device features.
 
-## Test and Deploy
+**Cloud Services and Integration**
 
-Use the built-in continuous integration in GitLab.
+- Contributed to setting up and configuring AWS services for the application, including S3, DynamoDB, API Gateway and Lambda.
+- Worked with AWS S3 for image storage and DynamoDB for user and catch data.
+- Explored and integrated cloud functionality involving API Gateway and AWS Lambda.
+- Worked with application data flows between the frontend, cloud storage and backend services.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+**AI Research and Evaluation**
 
-***
+- Researched and evaluated different AI image recognition services, including Amazon Rekognition, Amazon Bedrock and Fishial.
+- Developed test cases and evaluation criteria to assess the suitability of different AI models for fish identification.
+- Conducted comparative testing using sample fish and shark images.
+- Investigated identification results and model confidence to help inform the selection of an appropriate identification solution.
 
-# Editing this README
+**Software Testing and Quality Assurance**
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+- Created and executed test cases to assess application functionality.
+- Conducted exploratory testing to identify unexpected behaviour and potential defects.
+- Tested edge cases across application workflows, including image handling, data processing and connectivity-dependent functionality.
+- Investigated issues involving offline storage, image uploads, GPS metadata and data synchronisation.
+- Assessed application behaviour under different conditions and contributed to identifying areas requiring improvement.
 
-## Suggestions for a good README
+## Known Limitations
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Image EXIF GPS extraction does not consistently return accurate locations.
+- The application depends on configured AWS services and its associated backend API.
+- Authentication and cloud access require further security improvements before production deployment.
