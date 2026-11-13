@@ -1,0 +1,9 @@
+{
+  "appId": "com.project.fishAI",
+  "appName": "Fish Identifier",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}
