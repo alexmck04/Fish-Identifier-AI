@@ -7,7 +7,7 @@ The application allows users to photograph fish, receive AI-generated species pr
 ## Screenshots
 
 ### Dashboard
-![Dashboard](Github\blueshuttle\screenshots/Fish-Identifier-App-dashboard.png)
+![Dashboard](screenshots/Fish-Identifier-App-dashboard.png)
 
 ### Fish Identification
 ![Identify Fish page](screenshots/Identify-fish-page.png)
