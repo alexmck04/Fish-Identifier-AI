@@ -15,7 +15,7 @@ The application allows users to photograph fish, receive AI-generated species pr
 ### Catch History
 ![Image History](screenshots/Image-history-page.png)
 
-### Images page
+### Modify and Delete Images
 ![Images page](screenshots/My-images-page.png)
 
 ### Statistics Dashboard
