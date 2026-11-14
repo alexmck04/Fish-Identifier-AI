@@ -4,6 +4,26 @@ A fish identification application developed as part of a collaborative R&D proje
 
 The application allows users to photograph fish, receive AI-generated species predictions, record catches and view their catch history through an image gallery, statistics dashboard and interactive map. It also supports offline image storage and later synchronisation.
 
+## Screenshots
+
+### Dashboard
+![Dashboard](Github\blueshuttle\screenshots/Fish-Identifier-App-dashboard.png)
+
+### Fish Identification
+![Identify Fish page](screenshots/Identify-fish-page.png)
+
+### Catch History
+![Image History](screenshots/Image-history-page.png)
+
+### Images page
+![Images page](screenshots/My-images-page.png)
+
+### Statistics Dashboard
+![Statistics Dashboard](screenshots/My-Statistics-page.png)
+
+### Interactive Map
+![Interactive Map](screenshots/Global-map-page.png)
+
 ## Features
 
 - **AI Fish Identification:** Capture or select photographs for AI-based fish identification.
